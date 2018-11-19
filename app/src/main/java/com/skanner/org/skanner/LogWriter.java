@@ -1,7 +1,11 @@
 package com.skanner.org.skanner;
 
+import android.os.Environment;
+import android.util.Log;
+
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
@@ -12,9 +16,9 @@ import java.util.Date;
 
 public class LogWriter {
 
-    private final String LOG_FILE_NAME = "log.txt";
-    private File logFile = new File(LOG_FILE_NAME);
-
+    private final String LOG_FILE_NAME = "/log.txt";
+    private File logFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM), LOG_FILE_NAME);
+    //private File logFile = new File("log.txt");
     private static LogWriter instance;
 
     private LogWriter() { }
@@ -24,6 +28,10 @@ public class LogWriter {
             instance = new LogWriter();
         }
         return instance;
+    }
+
+    public void setLogFile(String name) {
+        logFile = new File(name);
     }
 
     public void appendEntry(String first, String second) {
@@ -37,10 +45,18 @@ public class LogWriter {
             outStream = new FileOutputStream(logFile, true);
             writer = new OutputStreamWriter(outStream);
             writer.append(formattedDate + " " + first + " " + second + "\n");
-            writer.close();
         }
         catch (Exception e) {
             // handle exception
+            Log.e("FEIL", e.getMessage());
+        }
+        finally {
+            try {
+                writer.close();
+            }
+            catch (IOException e) {
+                //  handle exception
+            }
         }
     }
 
@@ -50,6 +66,7 @@ public class LogWriter {
             out = new PrintWriter(logFile);
         }
         catch (Exception e) {
+            Log.e("Feil: ", e.getMessage());
             // handle exception
         }
         finally {

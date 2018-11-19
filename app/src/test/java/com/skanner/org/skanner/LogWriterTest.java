@@ -20,6 +20,7 @@ public class LogWriterTest {
     @Before
     public void setUp() throws Exception {
         writer = LogWriter.getInstance();
+        writer.setLogFile("log.txt");
         writer.clearLogFile();
         writer.appendEntry("first1", "first2");
     }
