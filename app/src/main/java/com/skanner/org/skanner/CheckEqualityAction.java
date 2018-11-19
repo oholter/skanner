@@ -39,7 +39,10 @@ public class CheckEqualityAction implements TextWatcher {
 
     public void checkEquality() {
         if (!second.getText().toString().equals("")) {
-            LogWriter writer = LogWriter.getInstance();
+            //LogWriter writer = TextFileLogWriter.getInstance();
+            LogWriter writer = SqlLogWriter.getInstance();
+            writer.setContext(context);
+
             if (first.getText().toString().equals(second.getText().toString())) {
                 writer.appendEntry(first.getText().toString(), second.getText().toString());
                 result.setTextColor(Color.BLACK);
@@ -57,7 +60,6 @@ public class CheckEqualityAction implements TextWatcher {
                 result.setBackgroundColor(Color.RED);
                 playSound();
             }
-
         }
         else {
             first.requestFocus();

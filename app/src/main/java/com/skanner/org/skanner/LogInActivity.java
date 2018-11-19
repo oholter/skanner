@@ -31,10 +31,16 @@ public class LogInActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View w) {
-                if (!userText.toString().equals("")) {
-                    user.logIn(userText.toString());
-                    Intent intent = new Intent(getApplicationContext(), SkanActivity.class);
-                    startActivity(intent);
+                if (!userText.getText().toString().equals("")) {
+                    user.logIn(userText.getText().toString());
+
+                    if (user.getUserName().equals("2222")) {
+                        Intent intent = new Intent(getApplicationContext(), adminActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(getApplicationContext(), SkanActivity.class);
+                        startActivity(intent);
+                    }
                 }
             }
         });

@@ -1,7 +1,5 @@
 package com.skanner.org.skanner;
 
-import android.util.Log;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,14 +12,14 @@ import static org.junit.Assert.assertEquals;
 
 public class LogWriterTest {
 
-    LogWriter writer = null;
+    TextFileLogWriter writer = null;
 
 
     @Before
     public void setUp() throws Exception {
-        writer = LogWriter.getInstance();
+        writer = TextFileLogWriter.getInstance();
         writer.setLogFile("log.txt");
-        writer.clearLogFile();
+        writer.clearLog();
         writer.appendEntry("first1", "first2");
     }
 
