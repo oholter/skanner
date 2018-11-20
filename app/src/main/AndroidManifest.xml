@@ -21,8 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        b
-        <activity android:name=".adminActivity"></activity>
+
+        <activity
+            android:name=".adminActivity"
+            android:parentActivityName=".LogInActivity"></activity>
     </application>
 
 </manifest>

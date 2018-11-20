@@ -19,7 +19,6 @@ public class SkanActivity extends AppCompatActivity {
         EditText topText = findViewById(R.id.topScanField);
         EditText bottomText = findViewById(R.id.bottomScanField);
         TextView resultText = findViewById(R.id.resultView);
-        Intent parentIntent = getIntent();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             topText.setShowSoftInputOnFocus(false);

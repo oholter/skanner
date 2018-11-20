@@ -7,6 +7,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CheckEqualityAction implements TextWatcher {
     private EditText first;
@@ -39,22 +40,23 @@ public class CheckEqualityAction implements TextWatcher {
 
     public void checkEquality() {
         if (!second.getText().toString().equals("")) {
-            //LogWriter writer = TextFileLogWriter.getInstance();
+//            LogWriter writer = TextFileLogWriter.getInstance();
             LogWriter writer = SqlLogWriter.getInstance();
             writer.setContext(context);
 
             if (first.getText().toString().equals(second.getText().toString())) {
-                writer.appendEntry(first.getText().toString(), second.getText().toString());
-                result.setTextColor(Color.BLACK);
-                result.setText("OK");
-                result.setBackgroundColor(Color.GREEN);
+                writer.appendEntry(first.getText().toString(), second.getText().toString(), false);
+//                result.setTextColor(Color.BLACK);
+//                result.setText("OK");
+//                result.setBackgroundColor(Color.GREEN);
+                Toast.makeText(context, "OK", Toast.LENGTH_SHORT).show();
 
                 first.requestFocus();
 
                 first.setText("");
                 second.setText("");
             } else {
-                writer.appendEntry(first.getText().toString(), second.getText().toString());
+                writer.appendEntry(first.getText().toString(), second.getText().toString(), true);
                 result.setTextColor(Color.WHITE);
                 result.setText("Feil");
                 result.setBackgroundColor(Color.RED);

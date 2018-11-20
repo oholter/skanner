@@ -15,8 +15,8 @@ public class SqlLogWriter implements LogWriter {
     }
 
     @Override
-    public void appendEntry(String first, String second) {
-        db.insertEntry(first, second);
+    public void appendEntry(String first, String second, boolean feil) {
+        db.insertEntry(first, second, feil);
     }
 
     @Override
@@ -32,5 +32,9 @@ public class SqlLogWriter implements LogWriter {
 
     public String getLastEntry() {
         return db.getLastEntry();
+    }
+
+    public String getResults(String first, String last, boolean feil) {
+        return db.getResults(first, last, feil);
     }
 }

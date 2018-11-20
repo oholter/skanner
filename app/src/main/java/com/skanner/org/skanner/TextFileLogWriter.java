@@ -40,7 +40,7 @@ public class TextFileLogWriter implements LogWriter {
     }
 
     @Override
-    public void appendEntry(String first, String second) {
+    public void appendEntry(String first, String second, boolean feil) {
         Calendar c = Calendar.getInstance();
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         String formattedDate = df.format(c.getTime());
@@ -50,7 +50,12 @@ public class TextFileLogWriter implements LogWriter {
         try {
             outStream = new FileOutputStream(logFile, true);
             writer = new OutputStreamWriter(outStream);
-            writer.append(formattedDate + " " + first + " " + second + "\n");
+            if (feil) {
+                writer.append(formattedDate + " " + first + " " + second + "FEIL" + "\n");
+            }
+            else {
+                writer.append(formattedDate + " " + first + " " + second + "\n");
+            }
         }
         catch (Exception e) {
             // handle exception
