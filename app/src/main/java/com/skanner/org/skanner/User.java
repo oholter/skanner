@@ -9,6 +9,7 @@ public class User {
     public static User getInstance() {
         if (instance == null) {
             instance = new User();
+            instance.setUserName("NO_USER"); // for testing
         }
         return instance;
     }

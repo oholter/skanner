@@ -16,8 +16,9 @@ import java.util.Calendar;
 public class TextFileLogWriter implements LogWriter {
 
     private final String LOG_FILE_NAME = "/log.txt";
-    private File logFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM), LOG_FILE_NAME);
-    //private File logFile = new File("log.txt");
+
+    private File logFile;
+
     private static TextFileLogWriter instance;
     private Context context;
 
@@ -36,7 +37,11 @@ public class TextFileLogWriter implements LogWriter {
 
     @Override
     public void setContext(Context context) {
-        this.context = context;
+        if (context == null) { // for testing purposes
+            logFile = new File("log.txt");
+        } else {
+            logFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM), LOG_FILE_NAME);
+        }this.context = context;
     }
 
     @Override
@@ -51,10 +56,10 @@ public class TextFileLogWriter implements LogWriter {
             outStream = new FileOutputStream(logFile, true);
             writer = new OutputStreamWriter(outStream);
             if (feil) {
-                writer.append(formattedDate + " " + first + " " + second + "FEIL" + "\n");
+                writer.append(formattedDate + " " + first + " " + second + " FEIL" + "\n");
             }
             else {
-                writer.append(formattedDate + " " + first + " " + second + "\n");
+                writer.append(formattedDate + " " + first + " " + second + " OK" + "\n");
             }
         }
         catch (Exception e) {

@@ -1,5 +1,7 @@
 package com.skanner.org.skanner;
 
+import android.content.Context;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,7 +12,7 @@ import java.util.Calendar;
 
 import static org.junit.Assert.assertEquals;
 
-public class LogWriterTest {
+public class TextFileLogWriterTest {
 
     TextFileLogWriter writer = null;
 
@@ -18,14 +20,14 @@ public class LogWriterTest {
     @Before
     public void setUp() throws Exception {
         writer = TextFileLogWriter.getInstance();
-        writer.setLogFile("log.txt");
+        writer.setContext(null);
         writer.clearLog();
-        writer.appendEntry("first1", "first2");
+        writer.appendEntry("first1", "first2", false);
     }
 
     @Test
     public void ShouldAppendLine() throws Exception {
-        writer.appendEntry("second1", "second2");
+        writer.appendEntry("second1", "second2", true);
         BufferedReader reader = new BufferedReader(new FileReader("log.txt"));
         int lines = 0;
         String line = reader.readLine();
@@ -41,7 +43,7 @@ public class LogWriterTest {
 
     @Test
     public void ShouldKeepOldLine() throws Exception {
-        writer.appendEntry("second1", "second2");
+        writer.appendEntry("second1", "second2", true);
         BufferedReader reader = new BufferedReader(new FileReader("log.txt"));
         int lines = 0;
         String line = reader.readLine();
@@ -53,7 +55,7 @@ public class LogWriterTest {
 
     @Test
     public void ShouldWriteThisDate() throws Exception {
-        writer.appendEntry("second1", "second2");
+        writer.appendEntry("second1", "second2", true);
         BufferedReader reader = new BufferedReader(new FileReader("log.txt"));
         int lines = 0;
         String line = reader.readLine();
@@ -67,7 +69,7 @@ public class LogWriterTest {
 
     @Test
     public void ShouldWriteThisTime() throws Exception {
-        writer.appendEntry("second1", "second2");
+        writer.appendEntry("second1", "second2", true);
         BufferedReader reader = new BufferedReader(new FileReader("log.txt"));
         int lines = 0;
         String line = reader.readLine();
@@ -81,7 +83,7 @@ public class LogWriterTest {
 
     @Test
     public void ShouldWriteFirstLineElement() throws Exception {
-        writer.appendEntry("second1", "second2");
+        writer.appendEntry("second1", "second2", true);
         BufferedReader reader = new BufferedReader(new FileReader("log.txt"));
         int lines = 0;
         reader.readLine(); // throws away first line
@@ -93,7 +95,7 @@ public class LogWriterTest {
 
     @Test
     public void ShouldWriteSecondLineElement() throws Exception {
-        writer.appendEntry("second1", "second2");
+        writer.appendEntry("second1", "second2", true);
         BufferedReader reader = new BufferedReader(new FileReader("log.txt"));
         int lines = 0;
         reader.readLine(); // throws away first line
@@ -101,5 +103,28 @@ public class LogWriterTest {
         String[] lineParts = line.split(" ");
 
         assertEquals("second2", lineParts[3]);
+    }
+
+    @Test
+    public void LastEntryShouldBeFeil() throws Exception {
+        writer.appendEntry("second1", "second2", true);
+        BufferedReader reader = new BufferedReader(new FileReader("log.txt"));
+        int lines = 0;
+        reader.readLine(); // throws away first line
+        String line = reader.readLine();
+        String[] lineParts = line.split(" ");
+
+        assertEquals("FEIL", lineParts[4]);
+    }
+
+    @Test
+    public void FirstEntryShouldBeOK() throws Exception {
+        writer.appendEntry("second1", "second2", true);
+        BufferedReader reader = new BufferedReader(new FileReader("log.txt"));
+        int lines = 0;
+        String line = reader.readLine();
+        String[] lineParts = line.split(" ");
+
+        assertEquals("OK", lineParts[4]);
     }
 }

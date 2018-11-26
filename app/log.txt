@@ -1,2 +1,2 @@
-19-11-2018 09:22:07 first1 first2
-19-11-2018 09:22:07 second1 second2
+26-11-2018 08:12:12 first1 first2 OK
+26-11-2018 08:12:12 second1 second2 FEIL

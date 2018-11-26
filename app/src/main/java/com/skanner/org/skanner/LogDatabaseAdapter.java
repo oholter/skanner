@@ -81,7 +81,6 @@ public class LogDatabaseAdapter {
 
     }
 
-    // method to get the password  of userName
     public String getLastEntry() {
         String toReturn = "";
         db = dbHelper.getReadableDatabase();
@@ -111,6 +110,19 @@ public class LogDatabaseAdapter {
         return toReturn;
     }
 
+    /**
+     * This function resturns a string containing all the log entries within the time specified,
+     * it includes both the days specified
+     *
+     * @fra String on the format YYYY-MM-DD
+     * @til String on the format YYYY-MM-DD
+     * @feil Boolean if true, the result will include only feil
+     *
+     * @return String with the format:
+     * USERNAME DATE TIME FIRST_ENTRY SECOND_ENTRY RIKTIG/FEIL
+     *
+     * Date is on the format YYYY-MM-DD HH:MM:SS
+     */
     public String getResults(String fra, String til, boolean feil) {
         String toReturn = "";
         db = dbHelper.getReadableDatabase();
@@ -119,22 +131,19 @@ public class LogDatabaseAdapter {
         Cursor cursor = null;
         try {
             if (feil) {
-                args = new String[]{fra, til, "1"};
-                //cursor = db.query("LOG", columns, "DATE >= ? AND DATE <= ? AND FEIL = ?", args, null, null, "ID ASC");
                 String query = "SELECT USERNAME, DATE, FIRST, SECOND, FEIL FROM LOG WHERE " +
                         " DATE >= '" + fra + " 00:00:00'" +
                         " AND DATE <= '" + til + " 23:59:59'" +
-                        " AND FEIL = 1";
+                        " AND FEIL = 1" +
+                        " ORDER BY DATE ASC";
 
                 cursor = db.rawQuery(query, null);
                 Log.e("query:", query);
             } else {
-                args = new String[]{fra, til};
-                //cursor = db.query("LOG", columns, "DATE >= ? AND DATE <= ?", args, null, null, "ID ASC");
-                //cursor = db.query("LOG", columns, null, null, null, null, "ID DESC");
                 String query = "SELECT USERNAME, DATE, FIRST, SECOND, FEIL FROM LOG WHERE " +
                         " DATE >= '" + fra + " 00:00:00'" +
-                        " AND DATE <= '" + til + " 23:59:59'";
+                        " AND DATE <= '" + til + " 23:59:59'" +
+                        " ORDER BY DATE ASC";
                 cursor = db.rawQuery(query, null);
                 Log.e("query:", query);
             }
@@ -142,13 +151,13 @@ public class LogDatabaseAdapter {
             toReturn = "";
             while (!cursor.isAfterLast()) {
                 toReturn += cursor.getString(cursor.getColumnIndex("USERNAME"));
-                toReturn += ", ";
+                toReturn += " ";
                 toReturn += cursor.getString(cursor.getColumnIndex("DATE"));
-                toReturn += ", ";
+                toReturn += " ";
                 toReturn += cursor.getString(cursor.getColumnIndex("FIRST"));
-                toReturn += ", ";
+                toReturn += " ";
                 toReturn += cursor.getString(cursor.getColumnIndex("SECOND"));
-                toReturn += ", ";
+                toReturn += " ";
                 if (cursor.getInt(cursor.getColumnIndex("FEIL")) == 1) {
                     toReturn += "FEIL";
                 } else {
