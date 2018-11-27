@@ -1,8 +1,11 @@
+/**
+ * Denne klassen inneholder funksjonaliteten med dialogboksene for valg av dato
+ * i admin-bildet
+ */
+
 package com.skanner.org.skanner;
 
 import android.content.Context;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;

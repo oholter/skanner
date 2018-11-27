@@ -1,3 +1,8 @@
+/**
+ * Denne klassen håndterer kall til databasen
+ * Den har funksjoner for å legge til data og hente ut data
+ */
+
 package com.skanner.org.skanner;
 
 import android.content.ContentValues;
@@ -6,7 +11,9 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import android.widget.Toast;
+
+import com.skanner.org.skanner.DataBaseHelper;
+import com.skanner.org.skanner.User;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -45,7 +52,7 @@ public class LogDatabaseAdapter {
     }
 
 
-    // method to insert a record in Table
+    // method to insert a record
     public String insertEntry(String first, String second, boolean feil) {
         try {
             ContentValues newValues = new ContentValues();
@@ -76,7 +83,6 @@ public class LogDatabaseAdapter {
         return ok;
     }
 
-    // method to delete a Record of UserName
     public void deleteEntry(String UserName) {
 
     }
@@ -111,7 +117,7 @@ public class LogDatabaseAdapter {
     }
 
     /**
-     * This function resturns a string containing all the log entries within the time specified,
+     * This function returns a string containing all the log entries within the time specified,
      * it includes both the days specified
      *
      * @fra String on the format YYYY-MM-DD
@@ -177,11 +183,11 @@ public class LogDatabaseAdapter {
         return toReturn;
     }
 
-    // Method to Update an Existing
-    public void updateEntry(String userName, String password) {
 
-    }
-
+    /**
+     * deletes all entries in database
+     * used for testing
+     */
     public void clear() {
         db = dbHelper.getWritableDatabase();
         db.execSQL("delete from LOG");

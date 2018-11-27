@@ -1,3 +1,7 @@
+/**
+ * Dette grensesnittet definerer funksjonene til en LogWriter,
+ * både SqlLogWriter og TextFileLogWriter må ha disse
+ */
 package com.skanner.org.skanner;
 
 import android.content.Context;

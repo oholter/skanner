@@ -1,3 +1,7 @@
+/**
+ * Denne klassen lagrer brukernavnet og gjør dette tilgjengelig i programmet
+ */
+
 package com.skanner.org.skanner;
 
 public class User {

@@ -1,17 +1,19 @@
+/**
+ * Denne klassen kobler funksjonalitet til  bildet som kommer opp for admin-bruker
+ */
+
 package com.skanner.org.skanner;
 
-import android.app.DatePickerDialog;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
-import java.util.Calendar;
+
+
 
 public class adminActivity extends AppCompatActivity {
 
@@ -38,10 +40,5 @@ public class adminActivity extends AppCompatActivity {
         fraDato.setOnClickListener(new DateDialog(fraDato,this));
         tilDato.setOnClickListener(new DateDialog(tilDato, this));
         finnButton.setOnClickListener(new SqlResultListener(fraDato, tilDato, feilBox, sqlResultText, this.getApplicationContext()));
-
-
-        //writer.clearLog();
-
-
     }
 }

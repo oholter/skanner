@@ -1,10 +1,13 @@
+/**
+ * Denne klassen oppretter databaseobjekter og tabeller
+ */
+
 package com.skanner.org.skanner;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
-import android.database.sqlite.SQLiteOpenHelper;
 
 
 public class DataBaseHelper extends SQLiteOpenHelper {

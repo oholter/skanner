@@ -1,3 +1,8 @@
+/**
+ * Denne klassen inneholder funksjonalitet for å slette innholdet i begge skanner-tekstfeltene
+ * og starte på nytt
+ */
+
 package com.skanner.org.skanner;
 
 import android.graphics.Color;

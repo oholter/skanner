@@ -1,3 +1,10 @@
+/**
+ * Implementerer logging som skriving til tekst-fil. Kan brukes i stedet for database
+ * Filen legges i DCIM-mappen på android-enheten
+ *
+ * Må huske på å gi tillatelse til appen til å åpne og skrive til filer
+ */
+
 package com.skanner.org.skanner;
 
 import android.content.Context;

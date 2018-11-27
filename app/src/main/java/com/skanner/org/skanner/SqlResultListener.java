@@ -1,3 +1,9 @@
+/**
+ * Denne klassen implementerer funksjonalitetn til knappen i admin-bildet
+ * Den henter informasjon fra databasen ved å bruke informasjon i tekstfeltene
+ *
+ */
+
 package com.skanner.org.skanner;
 
 import android.content.Context;
@@ -5,6 +11,8 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.skanner.org.skanner.SqlLogWriter;
 
 class SqlResultListener implements View.OnClickListener {
     private EditText fraDato;

@@ -1,6 +1,12 @@
+/**
+ * Denne klassen kalles i CheckEquality-klassen og er et grensesnitt mellom denne og
+ * LogDatabaseAdaptor
+ */
 package com.skanner.org.skanner;
 
 import android.content.Context;
+
+import com.skanner.org.skanner.LogDatabaseAdapter;
 
 public class SqlLogWriter implements LogWriter {
     private Context context;

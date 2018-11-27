@@ -1,3 +1,6 @@
+/**
+ * Denne klassen gir funksjonlitet til elementene i Skan-vinduet
+ */
 package com.skanner.org.skanner;
 
 import android.content.Intent;
@@ -8,6 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.skanner.org.skanner.CheckEqualityAction;
+import com.skanner.org.skanner.ClearAllAction;
+import com.skanner.org.skanner.R;
 
 public class SkanActivity extends AppCompatActivity {
 

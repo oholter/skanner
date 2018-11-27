@@ -1,3 +1,7 @@
+/**
+ * Denne klassen kobler funksjonalitet til elementene i login-vinduet
+ */
+
 package com.skanner.org.skanner;
 
 import android.content.Intent;
@@ -7,6 +11,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
 
 public class LogInActivity extends AppCompatActivity {
 
@@ -37,9 +43,12 @@ public class LogInActivity extends AppCompatActivity {
                     if (user.getUserName().equals("2222")) {
                         Intent intent = new Intent(getApplicationContext(), adminActivity.class);
                         startActivity(intent);
-                    } else {
+                    } else if (user.getUserName().startsWith("B075")) {
                         Intent intent = new Intent(getApplicationContext(), SkanActivity.class);
                         startActivity(intent);
+                    } else {
+                        Toast.makeText(getApplicationContext(), user.getUserName()
+                                + " er ikke gyldig brukernavn", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
