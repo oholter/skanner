@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="43.84523mm"
+   height="43.84523mm"
+   viewBox="0 0 43.84523 43.845229"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="sortering.svg"
+   inkscape:export-filename="C:\skanner\images\sortering.png"
+   inkscape:export-xdpi="111.22761"
+   inkscape:export-ydpi="111.22761">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="311.22924"
+     inkscape:cy="70.099599"
+     inkscape:document-units="mm"
+     inkscape:current-layer="svg8"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1028"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     units="mm" />
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1"
+     transform="translate(-37.230652,-227.55016)" />
+  <g
+     transform="matrix(0.264583,0,0,0.264583,4.2380962,13.871502)"
+     style="fill:#000000"
+     id="barcode">
+    <rect
+       height="50"
+       width="2"
+       id="barcode_bar1"
+       y="0"
+       x="0" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar3"
+       y="0"
+       x="3" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar5"
+       y="0"
+       x="6" />
+    <rect
+       height="50"
+       width="2"
+       id="barcode_bar7"
+       y="0"
+       x="11" />
+    <rect
+       height="50"
+       width="3"
+       id="barcode_bar9"
+       y="0"
+       x="14" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar11"
+       y="0"
+       x="18" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar13"
+       y="0"
+       x="22" />
+    <rect
+       height="50"
+       width="4"
+       id="barcode_bar15"
+       y="0"
+       x="26" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar17"
+       y="0"
+       x="31" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar19"
+       y="0"
+       x="33" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar21"
+       y="0"
+       x="36" />
+    <rect
+       height="50"
+       width="4"
+       id="barcode_bar23"
+       y="0"
+       x="39" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar25"
+       y="0"
+       x="44" />
+    <rect
+       height="50"
+       width="4"
+       id="barcode_bar27"
+       y="0"
+       x="47" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar29"
+       y="0"
+       x="52" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar31"
+       y="0"
+       x="55" />
+    <rect
+       height="50"
+       width="2"
+       id="barcode_bar33"
+       y="0"
+       x="57" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar35"
+       y="0"
+       x="61" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar37"
+       y="0"
+       x="66" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar39"
+       y="0"
+       x="69" />
+    <rect
+       height="50"
+       width="4"
+       id="barcode_bar41"
+       y="0"
+       x="72" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar43"
+       y="0"
+       x="77" />
+    <rect
+       height="50"
+       width="2"
+       id="barcode_bar45"
+       y="0"
+       x="82" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar47"
+       y="0"
+       x="85" />
+    <rect
+       height="50"
+       width="2"
+       id="barcode_bar49"
+       y="0"
+       x="88" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar51"
+       y="0"
+       x="94" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar53"
+       y="0"
+       x="96" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar55"
+       y="0"
+       x="99" />
+    <rect
+       height="50"
+       width="2"
+       id="barcode_bar57"
+       y="0"
+       x="102" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar59"
+       y="0"
+       x="105" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar61"
+       y="0"
+       x="110" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar63"
+       y="0"
+       x="113" />
+    <rect
+       height="50"
+       width="2"
+       id="barcode_bar65"
+       y="0"
+       x="117" />
+    <rect
+       height="50"
+       width="2"
+       id="barcode_bar67"
+       y="0"
+       x="121" />
+    <rect
+       height="50"
+       width="3"
+       id="barcode_bar69"
+       y="0"
+       x="126" />
+    <rect
+       height="50"
+       width="1"
+       id="barcode_bar71"
+       y="0"
+       x="130" />
+    <rect
+       height="50"
+       width="2"
+       id="barcode_bar73"
+       y="0"
+       x="132" />
+    <text
+       id="barcode_text"
+       xml:space="preserve"
+       style="font-size:9px;text-align:center;text-anchor:middle"
+       y="59"
+       x="67">Sortering</text>
+  </g>
+  <rect
+     style="opacity:0.6;fill:#ff0000;fill-opacity:0.68627451;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+     id="rect2865"
+     width="43.845234"
+     height="1"
+     x="-1.9073486e-006"
+     y="17.024754" />
+</svg>

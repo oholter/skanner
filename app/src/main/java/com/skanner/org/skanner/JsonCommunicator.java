@@ -11,8 +11,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.DataOutputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -20,8 +18,8 @@ import java.util.Calendar;
 
 public class JsonCommunicator {
 
-    // SETT INN ADDRESSEN TIL SIDEN HER
-    private static final String SERVER_ADDR = "HTTP://SOME_LOCAL_SERVER/";
+    // SETT INN ADDRESSEN TIL SIDEN HER 10.0.2.2:5000 er addr til lokal flask server
+    private static final String SERVER_ADDR = "http://10.0.2.2:5000/";
 
     public static JSONObject createJsonObject(String first, String second, boolean feil) {
         JSONObject object = new JSONObject();
@@ -52,36 +50,31 @@ public class JsonCommunicator {
 
             String data = "";
 
-            HttpURLConnection httpURLConnection = null;
             try {
+                URL url = new URL(params[0]);
+                Log.i("URL:", url.toString());
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("POST");
+                conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+                conn.setRequestProperty("Accept", "application/json");
+                conn.setDoOutput(true);
+                conn.setDoInput(true);
 
-                httpURLConnection = (HttpURLConnection) new URL(params[0]).openConnection();
-                httpURLConnection.setRequestMethod("POST");
+                Log.i("JSON:", params[1]);
 
-                httpURLConnection.setDoOutput(true);
+                DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                os.writeBytes(params[1]);
+                os.flush();
+                os.close();
 
-                DataOutputStream wr = new DataOutputStream(httpURLConnection.getOutputStream());
-                wr.writeBytes("PostData=" + params[1]);
-                wr.flush();
-                wr.close();
+                Log.i("STATUS:", String.valueOf(conn.getResponseCode()));
+                Log.i("MSG:", conn.getResponseMessage());
 
-                InputStream in = httpURLConnection.getInputStream();
-                InputStreamReader inputStreamReader = new InputStreamReader(in);
-
-                int inputStreamData = inputStreamReader.read();
-                while (inputStreamData != -1) {
-                    char current = (char) inputStreamData;
-                    inputStreamData = inputStreamReader.read();
-                    data += current;
-                }
+                conn.disconnect();
             } catch (Exception e) {
+                Log.i("JSON exception:", e.getMessage());
                 e.printStackTrace();
-            } finally {
-                if (httpURLConnection != null) {
-                    httpURLConnection.disconnect();
-                }
             }
-
             return data;
         }
 

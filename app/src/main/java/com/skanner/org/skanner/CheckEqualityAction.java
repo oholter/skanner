@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 public class CheckEqualityAction implements TextWatcher {
     private EditText first;
     private EditText second;
