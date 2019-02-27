@@ -27,6 +27,7 @@ public class SkanActivity extends AppCompatActivity {
         EditText bottomText = findViewById(R.id.bottomScanField);
         TextView resultText = findViewById(R.id.resultView);
 
+        // Ikke bruke keyboard for disse tekstfeltene
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             topText.setShowSoftInputOnFocus(false);
             bottomText.setShowSoftInputOnFocus(false);
