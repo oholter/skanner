@@ -25,20 +25,30 @@ public class LogInActivity extends AppCompatActivity {
 
 
     private void logIn() {
-        if (!userText.getText().toString().equals("")) {
+        if (!userText.getText().toString().equals("")
+                && !passwordText.getText().toString().equals("")) {
             user.logIn(userText.getText().toString());
 
             if (user.getUserName().equals("2222")) {
                 Intent intent = new Intent(getApplicationContext(), adminActivity.class);
+                //clearText();
                 startActivity(intent);
             } else if (user.getUserName().startsWith("B075")) {
                 Intent intent = new Intent(getApplicationContext(), SkanActivity.class);
+                //clearText();
                 startActivity(intent);
             } else {
                 Toast.makeText(getApplicationContext(), user.getUserName()
                         + " er ikke gyldig brukernavn", Toast.LENGTH_SHORT).show();
+                //clearText();
             }
         }
+    }
+
+    private void clearText() {
+        userText.getText().clear();
+        passwordText.getText().clear();
+        userText.requestFocus();
     }
 
     @Override
@@ -64,7 +74,7 @@ public class LogInActivity extends AppCompatActivity {
         passwordText.addTextChangedListener(new TextWatcher() {
             @Override
             public void afterTextChanged(Editable e) {
-
+                clearText();
             }
 
             @Override
